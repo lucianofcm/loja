@@ -1,0 +1,28 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /loja
+       
+---
+spring:
+  profiles:    active:    - prod
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://ec2-174-129-225-160.compute-1.amazonaws.com:5432/d21magvh0usajo
+    username: bcmheeifucxpfz
+    password: 898f126aff80f3a369c238bee1fb3cb95a66f01c0755685b453ae03ed1a3afaf
+  jpa:
+    show-sql: true    hibernate:      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect  
+    generate-ddl: false        defer-datasource-initialization: true  devtools:    add-properties: false  rabbitmq:    host: fish.rmq.cloudamqp.com
+    username: bqzncglo
+    virtual-host: bqzncglo
+    template:      exchange: SISVOTOS
+    password: N0fAGgphhvNDixtisk2NCBruzQbJ1nDC  autoconfigure:    exclude:    - true
+
+server:  error:    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on-param
+    include-exception: true
+    
+
