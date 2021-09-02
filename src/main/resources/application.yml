@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8181
   servlet:
     context-path: /loja
        
@@ -19,10 +19,14 @@ spring:
     virtual-host: bqzncglo
     template:      exchange: SISVOTOS
     password: N0fAGgphhvNDixtisk2NCBruzQbJ1nDC  autoconfigure:    exclude:    - true
-
+    
 server:  error:    include-message: always
     include-binding-errors: always
     include-stacktrace: on-param
     include-exception: true
-    
-
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:5000}/eureka/  instance:    hostname: ${DOMAIN_NAME}
+    nonSecurePort: 80
