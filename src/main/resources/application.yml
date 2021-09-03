@@ -12,7 +12,7 @@ spring:
     username: cauhztndhybkjd
     password: 604479f6f05d9d2e9eb3dc5b73a26999dc724fa5bad4a180d79fe1c1187fa97a
   jpa:
-    show-sql: true    hibernate:      ddl-auto: none
+    show-sql: true    hibernate:      ddl-auto: create
     database-platform: org.hibernate.dialect.PostgreSQLDialect  
     generate-ddl: false        defer-datasource-initialization: true  devtools:    add-properties: false  autoconfigure:    exclude:    - true
     
@@ -24,5 +24,6 @@ server:  error:    include-message: always
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URL:http://localhost:5000}/eureka/  instance:    hostname: ${DOMAIN_NAME}
-    nonSecurePort: 80
+      defaultZone: ${EUREKA_URL:http://localhost:8761}/eureka/    register-with-eureka: true
+    fetch-registry: true  instance:    hostname: ${DOMAIN_NAME:localhost}
+    nonSecurePort: 80    appname: loja 

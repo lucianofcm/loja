@@ -1,4 +1,4 @@
-package com.microservices.loja;
+package com.microservices.loja.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
