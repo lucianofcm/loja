@@ -3,7 +3,6 @@ package com.microservices.loja.domain;
 
 
 import java.math.BigDecimal;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,7 +26,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class HistoricoPreco {
+public class Preco {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,8 +35,8 @@ public class HistoricoPreco {
 	@Column
 	private BigDecimal valorProduto;
 	
-	@OneToMany(mappedBy="historicoPreco")
-    private Set<Produto> produto;
+	@ManyToOne
+	private Produto produto;
 	
 
 }
