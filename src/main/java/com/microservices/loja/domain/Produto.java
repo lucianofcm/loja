@@ -35,6 +35,9 @@ public class Produto {
 	@Column
 	private String descricao;
 	
+	@Column
+	private String nome;
+	
 	@OneToMany(mappedBy="produto")
     private Set<Preco> listaPrecos;
 	
