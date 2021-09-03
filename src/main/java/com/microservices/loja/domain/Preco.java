@@ -3,6 +3,7 @@ package com.microservices.loja.domain;
 
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,6 +38,12 @@ public class Preco {
 	
 	@ManyToOne
 	private Produto produto;
+	
+	@Column(columnDefinition = "TIMESTAMP")
+	private LocalDateTime inicioValidade;
+	
+	@Column(columnDefinition = "TIMESTAMP")
+	private LocalDateTime fimValidade;
 	
 
 }
