@@ -34,6 +34,6 @@ public class ProdutoController {
 	
 	@GetMapping(value = "/fornecedor")
 	public ResponseEntity<List<ProdutoDTO>> listarProdutosFornecedor() {
-		return new ResponseEntity<>(fornecedorService.listarProdutosFornecedor().getBody(), HttpStatus.OK);
+		return new ResponseEntity<List<ProdutoDTO>>(fornecedorService.listarProdutosFornecedor().getBody(), HttpStatus.OK);
 	}
 }

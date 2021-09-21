@@ -18,5 +18,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URL:http://localhost:8761}/eureka/
+management:  health:    elasticsearch:      enabled: true  metrics:    export:      elastic:        host: localhost:9200
 fornecedor:
   url: "http://fornecedor/"

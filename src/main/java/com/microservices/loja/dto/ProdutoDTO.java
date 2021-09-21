@@ -2,7 +2,7 @@ package com.microservices.loja.dto;
 
 import java.util.Set;
 
-import com.microservices.loja.domain.Preco;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class ProdutoDTO {
 	private Integer id;
 
@@ -22,5 +23,5 @@ public class ProdutoDTO {
 
 	private String nome;
 
-	private Set<Preco> listaPrecos;
+	private Set<PrecoDTO> listaPrecos;
 }
