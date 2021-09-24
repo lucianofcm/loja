@@ -10,10 +10,10 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect  
     generate-ddl: false    
-    defer-datasource-initialization: true
+    defer-datasource-initialization: true  main:    allow-bean-definition-overriding: true
 eureka:
   client:
     serviceUrl:

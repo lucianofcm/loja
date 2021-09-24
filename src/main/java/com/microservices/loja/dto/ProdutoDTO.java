@@ -23,5 +23,7 @@ public class ProdutoDTO {
 
 	private String nome;
 
+	private PrecoDTO preco;
+	
 	private Set<PrecoDTO> listaPrecos;
 }

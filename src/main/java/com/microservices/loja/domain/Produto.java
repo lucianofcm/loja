@@ -4,12 +4,13 @@ package com.microservices.loja.domain;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -38,10 +39,10 @@ public class Produto {
 	@Column
 	private String nome;
 	
-	@OneToMany(mappedBy="produto")
-    private Set<Preco> listaPrecos;
 	
-	
+	@OneToMany(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "produto_id")
+    private Set<Preco> precos;
 	
 
 }
